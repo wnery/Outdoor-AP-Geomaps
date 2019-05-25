@@ -1,29 +1,42 @@
 # Outdoor_AP_Geomaps
 
-Code used for update the Outdoor APs locations
-
+Solution to capture outdoor APs location, regularly update it and display it in Prime Infrastructure or other platforms like Google Earth or Next UI for monitoring and operations.
 
 ## Business/Technical Challenge
 
-The customer has several Outdoor AP that is constantly changing ther position and for they it's very importal know what is the actual location of the AP.
+Companies in certain verticals like mining and service providers deploy outdoor Access Points with GPS receivers. These companies specially the mining companies want to have a way to monitor where these APs are deployed since they are mobile and move daily to new locations supporting mining equipment used for exploration.
+
+The need is to have these APs location updated when they move to be used in monitoring and operation activities.
+
+Prime Infrastructure is used by some customers and others are looking for other ways to visualize their APs and information about these APs like number of customers, channel, mesh network rf quality and so others.
+
+Until Prime Infrastructure 3.5 Outdoor APs GPS location is not updated automatically. Prime and Aironet have limited API capabilities.
+
 
 ## Proposed Solution
 
+The proposed solution encompass the following:
 
-We biult an code capable to collect the information and make a csv file to update the AP location
+1) For customers with Prime Infrastructure until 3.5 and Aironet controllers a software that uses Prime APIs and WLC SNMP capabilities collect the APs information and generate a CVS file that can be loaded at Prime when a refresh of the APs location is desired, instead of having to do it manually.
+
+2) For customers migrating to Catalyst Wireless LAN Controllers the Catalyst WLC Yang modeling is used to collect the information in a more scalable way and generate a CSV file that can be loaded at Prime Infrastructure.
+
+3) For customers looking for other ways to visualize their outdoor APs, a software will provide and export file that can be open at Google Earth or Next UI.
+
 
 ### Cisco Products Technologies/ Services
 
-Our solution will levegerage the following Cisco technologies
+Our solution will leverage the following Cisco technologies
 
 * Cisco Unified Wireless Networking (CUWN)
+* Cisco Catalyst 9800 Controller
 * Prime Infrastructure (PI)
 
 ## Team Members
 
-* Wendel Nery <wnery@cisco.com> - Segment Name
-* Flavio Correa <flcorrea@cisco.com> - Segment Name
-* Julio Gouy <jgouy@cisco.com>
+* Wendel Nery <wnery@cisco.com> - Brazil CML Eng
+* Flavio Correa <flcorrea@cisco.com> - Brazil EN Architecture
+* Julio Gouy <jgouy@cisco.com> - Brazil Enterprise
 
 ## Solution Components
 
